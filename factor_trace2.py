@@ -50,26 +50,27 @@ fig = go.Figure(
 
 # Add traces
 init = 1
-
+fig.add_hline(0, line_width=1, line_dash="solid", line_color="grey")
+fig.add_vline(0, line_width=1, line_dash="solid", line_color="grey")
 fig.add_trace(
     go.Scatter(x=datam['Return90'][:init],
                y=datam['Return15'][:init],
                name="Momentum",
-               visible=True,
+               visible=True,line_shape='spline',
                line=dict(color="#04103b", dash="dash")))
 
 fig.add_trace(
     go.Scatter(x=datav['Return90'][:init],
                y=datav['Return15'][:init],
                name="Value",
-               visible=True,
+               visible=True,line_shape='spline',
                line=dict(color="#dd0400", dash="dash")))
 
 fig.add_trace(
     go.Scatter(x=dataq['Return90'][:init],
                y=dataq['Return15'][:init],
                name="Quality",
-               visible=True,
+               visible=True,line_shape='spline',
                line=dict(color="#3b5171", dash="dash")))
 
 # Animation
@@ -117,4 +118,4 @@ fig.update_layout(
 fig.layout.xaxis.tickformat = ',.1%'     
 fig.layout.yaxis.tickformat = ',.1%'    
 fig.show()
-fig.write_html("C:/FS/quantamental_platform/Publications/Factor_Performance_Monitoring/filed.html")
+fig.write_html("C:/FS/quantamental_platform/Publications/Factor_Performance_Monitoring/index.html")
