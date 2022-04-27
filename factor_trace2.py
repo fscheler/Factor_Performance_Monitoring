@@ -45,7 +45,7 @@ fig = go.Figure(
         yaxis=dict(range=[-0.2, 0.2],
                    autorange=False,
                    title_text="15 Days Return"),
-        title="Equity Factors Momentum",
+        title="Equity Factors Momentum (" + data.index.strftime("%b %d")[0] + " - "+ data.index.strftime("%b %d")[len(data.index.strftime("%b %d"))-1] +")",
     ))
 
 # Add traces
